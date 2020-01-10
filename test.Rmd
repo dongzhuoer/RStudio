@@ -12,9 +12,7 @@ output:
 knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
 ```
 
-
 ```{r}
-library(tidyverse)
-
+knitr::opts_knit$get('rmarkdown.pandoc.to')
 
 ```
