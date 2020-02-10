@@ -13,6 +13,14 @@ knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
 ```
 
 ```{r}
-knitr::opts_knit$get('rmarkdown.pandoc.to')
+library(ggplot2)
 
+p <- ggplot(mpg, aes(displ, hwy, colour = factor(cyl))) + geom_point()
+print(p)
+summary(p)
+ggsave("plot.png", p, width = 8, height = 5)
+
+readr::write_rds(p, "plot.rds")
+q <- readr::read_rds("plot.rds")
+q
 ```
